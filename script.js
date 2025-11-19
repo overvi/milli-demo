@@ -360,7 +360,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       },
       autoplay: {
-        delay: 3500,
+        delay: 1500,
         disableOnInteraction: false,
       },
     });
