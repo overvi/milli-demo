@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>میلی - خرید طلای آب شده</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="site-header">
+        <div class="nav-bar container">
+          <div class="nav-right">
+            <div class="logo">میلی</div>
+            <nav class="main-nav">
+              <a href="#how-it-works">راهنمای استفاده</a>
+              <a href="#rules">قوانین و مقررات</a>
+              <a href="#licenses">مجوزها</a>
+              <a href="#branches">شعب میلی</a>
+              <a href="#contact">تماس با ما</a>
+            </nav>
+          </div>
+          <div class="nav-actions">
+            <a href="#login" class="link-ghost">ورود</a>
+            <a href="#app" class="btn btn-small btn-gold">نصب اپلیکیشن</a>
+          </div>
+        </div>
+
+        <div class="hero container reveal-on-scroll">
+          <div class="hero-illustration">
+            <div class="hero-card">
+              <div class="hero-card-header">
+                <button class="pill pill-muted hero-range" data-range="week">
+                  هفته گذشته
+                </button>
+                <button class="pill pill-muted hero-range" data-range="month">
+                  ماه گذشته
+                </button>
+                <button
+                  class="pill pill-primary hero-range"
+                  data-range="day"
+                  aria-pressed="true"
+                >
+                  ۲۴ ساعت اخیر
+                </button>
+              </div>
+              <div class="hero-card-body">
+                <div class="hero-card-price">
+                  <div class="hero-card-label">قیمت ۱ گرم طلای ۱۸ عیار</div>
+                  <div class="hero-card-value">۱۱۱,۲۷۰,۰۰۰ ریال</div>
+                </div>
+                <div class="hero-card-chart">
+                  <canvas id="heroPriceChart" aria-hidden="true"></canvas>
+                  <div
+                    id="heroChartTooltip"
+                    class="hero-chart-tooltip"
+                    aria-hidden="true"
+                  ></div>
+                </div>
+                <div class="hero-card-footer">
+                  <div>
+                    <div class="hero-card-footer-label">کمترین قیمت</div>
+                    <div class="hero-card-footer-value">۱۱۰,۲۰۰,۰۰۰</div>
+                  </div>
+                  <div>
+                    <div class="hero-card-footer-label">بیشترین قیمت</div>
+                    <div class="hero-card-footer-value">۱۱۱,۹۶۰,۰۰۰</div>
+                  </div>
+                  <div class="hero-card-change positive">
+                    <span>۰.۷٪+</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="hero-card-shadow hero-card-shadow-1"></div>
+            <div class="hero-card-shadow hero-card-shadow-2"></div>
+          </div>
+
+          <div class="hero-content">
+            <p class="hero-kicker">سرمایه‌گذاری به قدرت طلا</p>
+            <h1 class="hero-title">خرید طلای آب شده در میلی</h1>
+            <p class="hero-subtitle">
+              با هر مقدار سرمایه می‌توانی طلای آب شده بخری، پولت را نقد کنی و
+              طلای فیزیکی تحویل بگیری. میلی با پشتوانه بانکی و مجوزهای رسمی،
+              خرید و فروش طلا را برایت امن و راحت می‌کند.
+            </p>
+            <div class="hero-actions">
+              <a href="#login" class="btn btn-gold">ورود / ثبت‌نام</a>
+              <a href="#how-it-works" class="btn btn-outline"
+                >چطور کار می‌کند؟</a
+              >
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="trade-widget-wrap reveal-on-scroll">
+          <div class="trade-widget container">
+            <div class="trade-tabs">
+              <button class="trade-tab active" data-tab="buy">خرید</button>
+              <button class="trade-tab" data-tab="sell">فروش</button>
+            </div>
+            <div class="trade-form" data-panel="buy">
+              <label>
+                <span>مبلغ پرداختی به ریال</span>
+                <input type="number" placeholder="مثلاً ۵,۰۰۰,۰۰۰" />
+              </label>
+              <label>
+                <span>مقدار طلای میلی (گرم)</span>
+                <input
+                  type="number"
+                  placeholder="مقدار تقریبی نمایش داده می‌شود"
+                />
+              </label>
+              <button class="btn btn-gold btn-block">محاسبه و ادامه</button>
+            </div>
+            <div class="trade-form trade-form-hidden" data-panel="sell">
+              <label>
+                <span>مقدار طلای میلی (گرم)</span>
+                <input type="number" placeholder="مثلاً ۲.۵" />
+              </label>
+              <label>
+                <span>مبلغ دریافتی به ریال</span>
+                <input type="number" placeholder="پس از کسر کارمزد" />
+              </label>
+              <button class="btn btn-gold btn-block">محاسبه و فروش</button>
+            </div>
+          </div>
+        </section>
+
+        <section id="app" class="section stats-section reveal-on-scroll">
+          <div class="container">
+            <div class="stats-card">
+              <div class="stats-badge">
+                <span>نفر&nbsp;</span>
+                <span class="stat-number" data-target="13000000">۰</span>
+                <span>&nbsp;+</span>
+              </div>
+              <p class="stats-title">تعداد کاربران اپلیکیشن میلی</p>
+              <div class="stats-row">
+                <div class="stats-item">
+                  <div class="stats-label">طلای تحویلی</div>
+                  <div class="stats-value">
+                    <span class="stat-number" data-target="313">۰</span>
+                    <span>&nbsp;کیلوگرم+</span>
+                  </div>
+                </div>
+                <div class="stats-item">
+                  <div class="stats-label">شعب و نمایندگی</div>
+                  <div class="stats-value">
+                    <span class="stat-number" data-target="9">۰</span>
+                    <span>&nbsp;شعبه</span>
+                  </div>
+                </div>
+                <div class="stats-item">
+                  <div class="stats-label">حجم معاملات</div>
+                  <div class="stats-value">
+                    <span class="stat-number" data-target="150900">۰</span>
+                    <span>&nbsp;کیلوگرم</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="how-it-works" class="section section-alt reveal-on-scroll">
+          <div class="container two-column">
+            <div class="video-placeholder">
+              <div class="video-thumb">ویدئو معرفی میلی</div>
+            </div>
+            <div class="benefits-list">
+              <h2>مزایای خرید طلای آب شده از میلی</h2>
+              <ul>
+                <li>نگهداری طلا در خزانه امن بانکی</li>
+                <li>نرخ یکسان خرید و فروش</li>
+                <li>دریافت طلای فیزیکی ۱۸ عیار</li>
+                <li>خرید و فروش آنلاین و شبانه‌روزی</li>
+                <li>پشتیبانی آنلاین و تلفنی</li>
+                <li>کارمزد شفاف و منصفانه</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="container cards-row">
+            <article class="info-card">
+              <h3>امن و دارای مجوز</h3>
+              <p>
+                تمامی مجوزهای خرید و فروش طلای آب شده از بانک مرکزی، نهادهای
+                نظارتی و صنفی دریافت شده است.
+              </p>
+            </article>
+            <article class="info-card info-card-primary">
+              <h3>پس‌انداز میلی‌گرمی طلا</h3>
+              <p>
+                با هر مبلغی که دوست داری، طلا را میلی‌گرم به میلی‌گرم بخر و به
+                مرور پس‌اندازت را طلا کن.
+              </p>
+            </article>
+            <article class="info-card">
+              <h3>بدون اجرت و مالیات</h3>
+              <p>
+                طلایی که در میلی می‌خری اجرت ساخت ندارد و معاف از مالیات و
+                کمیسیون فروشنده است.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section
+          id="licenses"
+          class="section licenses-section reveal-on-scroll"
+        >
+          <div class="container">
+            <h2 class="licenses-title">مجوزها</h2>
+            <div class="licenses-gallery">
+              <article class="license-item">
+                <div class="license-logo license-logo-1"></div>
+                <p class="license-caption">سازمان نظام صنفی رایانه‌ای کشور</p>
+              </article>
+              <article class="license-item">
+                <div class="license-logo license-logo-1"></div>
+                <p class="license-caption">سازمان نظام صنفی رایانه‌ای کشور</p>
+              </article>
+              <article class="license-item">
+                <div class="license-logo license-logo-1"></div>
+                <p class="license-caption">سازمان نظام صنفی رایانه‌ای کشور</p>
+              </article>
+              <article class="license-item">
+                <div class="license-logo license-logo-1"></div>
+                <p class="license-caption">سازمان نظام صنفی رایانه‌ای کشور</p>
+              </article>
+              <article class="license-item">
+                <div class="license-logo license-logo-2"></div>
+                <p class="license-caption">
+                  مرکز توسعه تجارت الکترونیکی (اینماد)
+                </p>
+              </article>
+              <article class="license-item">
+                <div class="license-logo license-logo-3"></div>
+                <p class="license-caption">وزارت صنعت، معدن و تجارت</p>
+              </article>
+            </div>
+            <div class="licenses-controls" aria-hidden="true">
+              <button class="licenses-arrow licenses-arrow-prev" type="button">
+                ‹
+              </button>
+              <button class="licenses-arrow licenses-arrow-next" type="button">
+                ›
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="faq"
+          class="section section-alt faq-section reveal-on-scroll"
+        >
+          <div class="container">
+            <h2>سوالات متداول خریداران طلای آب شده</h2>
+            <div class="faq-list">
+              <details open>
+                <summary>میلی چیست؟</summary>
+                <p>
+                  «میلی» پلتفرم خرید و فروش آنلاین طلای آب شده است که امکان
+                  نگهداری طلا در خزانه بانکی و دریافت طلای فیزیکی معادل را فراهم
+                  می‌کند.
+                </p>
+              </details>
+              <details>
+                <summary>کارمزد خرید طلای آب شده در میلی چقدر است؟</summary>
+                <p>
+                  کارمزدها به صورت شفاف پیش از ثبت نهایی سفارش نمایش داده
+                  می‌شوند و شامل هزینه نگهداری و معاملات هستند.
+                </p>
+              </details>
+              <details>
+                <summary>آیا می‌توانم طلای فیزیکی تحویل بگیرم؟</summary>
+                <p>
+                  بله، با رسیدن موجودی شما به حداقل تعیین شده، امکان تبدیل به
+                  طلای فیزیکی و تحویل در شعب منتخب وجود دارد.
+                </p>
+              </details>
+              <details>
+                <summary>چطور قیمت طلا در میلی تعیین می‌شود؟</summary>
+                <p>
+                  قیمت‌ها بر اساس نرخ لحظه‌ای بازار طلا و مظنه رسمی اتحادیه
+                  تعیین و به صورت زنده بروزرسانی می‌شوند.
+                </p>
+              </details>
+            </div>
+          </div>
+        </section>
+        <section class="section steps-section reveal-on-scroll">
+          <div class="container steps-inner">
+            <div class="steps-content">
+              <h2 class="steps-title">چند قدم تا طلا‌دار شدن</h2>
+              <div class="steps-list">
+                <button class="step-item active" type="button">
+                  <div class="step-header">
+                    <span class="step-index">۱</span>
+                    <span class="step-title">ثبت‌نام و احراز هویت</span>
+                  </div>
+                  <p class="step-description">
+                    در کمتر از چند دقیقه در میلی ثبت‌نام کن و احراز هویت را به
+                    صورت آنلاین انجام بده.
+                  </p>
+                </button>
+                <button class="step-item" type="button">
+                  <div class="step-header">
+                    <span class="step-index">۲</span>
+                    <span class="step-title">واریز به کیف پول</span>
+                  </div>
+                  <p class="step-description">
+                    از طریق درگاه بانکی امن، مبلغ دلخواهت را به کیف پول میلی
+                    واریز کن و آماده خرید طلا شو.
+                  </p>
+                </button>
+                <button class="step-item" type="button">
+                  <div class="step-header">
+                    <span class="step-index">۳</span>
+                    <span class="step-title">خرید طلای آب شده</span>
+                  </div>
+                  <p class="step-description">
+                    در لحظه قیمت‌ها را ببین و هر مقدار که می‌خواهی طلای آب شده
+                    بخری؛ حتی کسری از یک گرم.
+                  </p>
+                </button>
+                <button class="step-item" type="button">
+                  <div class="step-header">
+                    <span class="step-index">۴</span>
+                    <span class="step-title">فروش یا دریافت طلای فیزیکی</span>
+                  </div>
+                  <p class="step-description">
+                    هر زمان که خواستی می‌توانی طلایت را بفروشی یا در شعب منتخب،
+                    طلای فیزیکی معادل را تحویل بگیری.
+                  </p>
+                </button>
+              </div>
+            </div>
+            <div class="steps-illustration">
+              <div class="steps-phone"></div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer id="contact" class="site-footer reveal-on-scroll">
+        <div class="container footer-top">
+          <div class="footer-brand">
+            <div class="logo logo-footer">میلی</div>
+            <p class="footer-text">
+              «میلی» پلتفرم امن و شفاف برای خرید و فروش آنلاین طلای آب شده است؛
+              با پشتیبانی ۲۴ ساعته، نگهداری طلا در خزانه بانکی و امکان دریافت
+              طلای فیزیکی.
+            </p>
+          </div>
+          <div class="footer-cols">
+            <div class="footer-col">
+              <h4>لینک‌های سریع</h4>
+              <a href="#how-it-works">راهنمای استفاده</a>
+              <a href="#app">اپلیکیشن میلی</a>
+              <a href="#faq">سوالات متداول</a>
+              <a href="#licenses">مجوزها</a>
+            </div>
+            <div class="footer-col">
+              <h4>خدمات میلی</h4>
+              <p>خرید آنلاین طلای آب شده</p>
+              <p>فروش و تسویه طلای میلی</p>
+              <p>تحویل طلای فیزیکی ۱۸ عیار</p>
+              <p>پشتیبانی تلفنی و آنلاین</p>
+            </div>
+            <div class="footer-col footer-contact">
+              <h4>ارتباط با ما</h4>
+              <p>تلفن پشتیبانی: ۰۲۱-۱۲۳۴۵۶۷۸</p>
+              <p>ایمیل: support@milli.app</p>
+              <p>آدرس: تهران، خیابان مثال، پلاک ۱۲</p>
+              <div class="footer-social">
+                <span class="footer-social-pill">اینستاگرام</span>
+                <span class="footer-social-pill">تلگرام</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container footer-bottom">
+          <div class="footer-meta">
+            <span>© ۲۰۲۵ میلی - تمامی حقوق محفوظ است.</span>
+            <div class="footer-bottom-links">
+              <a href="#rules">قوانین و مقررات</a>
+              <span class="footer-bottom-separator">·</span>
+              <a href="#faq">سوالات متداول</a>
+              <span class="footer-bottom-separator">·</span>
+              <a href="#contact">تماس با ما</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
