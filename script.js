@@ -346,9 +346,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Licenses slider via Swiper (if available)
   if (window.Swiper && document.querySelector(".licenses-swiper")) {
     new Swiper(".licenses-swiper", {
-      loop: true,
       slidesPerView: 1,
       spaceBetween: 16,
+      watchOverflow: false,
       breakpoints: {
         640: {
           slidesPerView: 2,
@@ -360,7 +360,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       },
       autoplay: {
-        delay: 1500,
+        delay: 2500,
         disableOnInteraction: false,
       },
     });
