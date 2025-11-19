@@ -686,6 +686,10 @@ input[type="number"] {
   margin-bottom: 40px;
 }
 
+.licenses-swiper {
+  position: relative;
+}
+
 .licenses-row {
   display: flex;
   flex-wrap: wrap;
@@ -707,13 +711,9 @@ input[type="number"] {
   justify-content: flex-start;
   gap: 0;
   align-items: stretch;
-  overflow: hidden;
-  transition: transform 0.4s ease;
 }
 
 .license-item {
-  flex: 0 0 100%;
-  max-width: none;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -757,6 +757,15 @@ input[type="number"] {
   );
 }
 
+.license-logo-4 {
+  background: radial-gradient(
+    circle at 30% 30%,
+    #0ea5e9 0,
+    #0369a1 45%,
+    #082f49 100%
+  );
+}
+
 .license-caption {
   margin-top: 14px;
   font-size: 13px;
@@ -764,30 +773,11 @@ input[type="number"] {
 }
 
 .licenses-controls {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 28px;
+  display: none;
 }
 
 .licenses-arrow {
-  width: 38px;
-  height: 38px;
-  border-radius: 999px;
-  border: none;
-  cursor: pointer;
-  background: #f1f5ff;
-  color: #1d4ed8;
-  font-size: 20px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
-}
-
-.licenses-arrow:hover {
-  background: #e0ebff;
-  transform: translateY(-1px);
+  display: none;
 }
 
 /* FAQ */

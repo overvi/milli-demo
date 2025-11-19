@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>میلی - خرید طلای آب شده</title>
     <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
   </head>
   <body>
     <div class="page">
@@ -214,41 +218,45 @@
         >
           <div class="container">
             <h2 class="licenses-title">مجوزها</h2>
-            <div class="licenses-gallery">
-              <article class="license-item">
-                <div class="license-logo license-logo-1"></div>
-                <p class="license-caption">سازمان نظام صنفی رایانه‌ای کشور</p>
-              </article>
-              <article class="license-item">
-                <div class="license-logo license-logo-1"></div>
-                <p class="license-caption">سازمان نظام صنفی رایانه‌ای کشور</p>
-              </article>
-              <article class="license-item">
-                <div class="license-logo license-logo-1"></div>
-                <p class="license-caption">سازمان نظام صنفی رایانه‌ای کشور</p>
-              </article>
-              <article class="license-item">
-                <div class="license-logo license-logo-1"></div>
-                <p class="license-caption">سازمان نظام صنفی رایانه‌ای کشور</p>
-              </article>
-              <article class="license-item">
-                <div class="license-logo license-logo-2"></div>
-                <p class="license-caption">
-                  مرکز توسعه تجارت الکترونیکی (اینماد)
-                </p>
-              </article>
-              <article class="license-item">
-                <div class="license-logo license-logo-3"></div>
-                <p class="license-caption">وزارت صنعت، معدن و تجارت</p>
-              </article>
-            </div>
-            <div class="licenses-controls" aria-hidden="true">
-              <button class="licenses-arrow licenses-arrow-prev" type="button">
-                ‹
-              </button>
-              <button class="licenses-arrow licenses-arrow-next" type="button">
-                ›
-              </button>
+            <div class="licenses-swiper swiper">
+              <div class="licenses-gallery swiper-wrapper">
+                <article class="license-item swiper-slide">
+                  <div class="license-logo license-logo-1"></div>
+                  <p class="license-caption">سازمان نظام صنفی رایانه‌ای کشور</p>
+                </article>
+                <article class="license-item swiper-slide">
+                  <div class="license-logo license-logo-2"></div>
+                  <p class="license-caption">
+                    مرکز توسعه تجارت الکترونیکی (اینماد)
+                  </p>
+                </article>
+                <article class="license-item swiper-slide">
+                  <div class="license-logo license-logo-3"></div>
+                  <p class="license-caption">وزارت صنعت، معدن و تجارت</p>
+                </article>
+                <article class="license-item swiper-slide">
+                  <div class="license-logo license-logo-3"></div>
+                  <p class="license-caption">وزارت صنعت، معدن و تجارت</p>
+                </article>
+                <article class="license-item swiper-slide">
+                  <div class="license-logo license-logo-3"></div>
+                  <p class="license-caption">وزارت صنعت، معدن و تجارت</p>
+                </article>
+              </div>
+              <div class="licenses-controls" aria-hidden="true">
+                <button
+                  class="licenses-arrow licenses-arrow-prev"
+                  type="button"
+                >
+                  ‹
+                </button>
+                <button
+                  class="licenses-arrow licenses-arrow-next"
+                  type="button"
+                >
+                  ›
+                </button>
+              </div>
             </div>
           </div>
         </section>
@@ -398,6 +406,7 @@
       </footer>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

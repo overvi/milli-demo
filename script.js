@@ -8,10 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const heroRangeButtons = document.querySelectorAll(".hero-range");
   const stepItems = document.querySelectorAll(".step-item");
   const revealElements = document.querySelectorAll(".reveal-on-scroll");
-  const licensesGallery = document.querySelector(".licenses-gallery");
-  const licenseItems = document.querySelectorAll(".license-item");
-  const licensePrev = document.querySelector(".licenses-arrow-prev");
-  const licenseNext = document.querySelector(".licenses-arrow-next");
 
   tabs.forEach((tab) => {
     tab.addEventListener("click", () => {
@@ -132,8 +128,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const point = cachedPoints[hoverIndex];
       heroChartTooltip.textContent = formatPrice(point.value);
-      const clampedX = Math.max(8, Math.min(point.x, heroChartCanvas.clientWidth - 8));
-      const clampedY = Math.max(16, Math.min(point.y, heroChartCanvas.clientHeight - 8));
+      const clampedX = Math.max(
+        8,
+        Math.min(point.x, heroChartCanvas.clientWidth - 8)
+      );
+      const clampedY = Math.max(
+        16,
+        Math.min(point.y, heroChartCanvas.clientHeight - 8)
+      );
       heroChartTooltip.style.left = `${clampedX}px`;
       heroChartTooltip.style.top = `${clampedY}px`;
       heroChartTooltip.classList.add("visible");
@@ -341,33 +343,27 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Licenses slider
-  if (
-    licensesGallery &&
-    licenseItems.length > 1 &&
-    licensePrev &&
-    licenseNext
-  ) {
-    let currentLicenseIndex = 0;
-
-    const updateLicensesSlider = () => {
-      const offset = -currentLicenseIndex * 100;
-      licensesGallery.style.transform = `translateX(${offset}%)`;
-    };
-
-    licensePrev.addEventListener("click", () => {
-      currentLicenseIndex =
-        (currentLicenseIndex - 1 + licenseItems.length) % licenseItems.length;
-      updateLicensesSlider();
+  // Licenses slider via Swiper (if available)
+  if (window.Swiper && document.querySelector(".licenses-swiper")) {
+    new Swiper(".licenses-swiper", {
+      loop: true,
+      slidesPerView: 1,
+      spaceBetween: 16,
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 24,
+        },
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 32,
+        },
+      },
+      autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+      },
     });
-
-    licenseNext.addEventListener("click", () => {
-      currentLicenseIndex = (currentLicenseIndex + 1) % licenseItems.length;
-      updateLicensesSlider();
-    });
-
-    // Ensure initial positioning
-    updateLicensesSlider();
   }
 
   // Scroll reveal animations
